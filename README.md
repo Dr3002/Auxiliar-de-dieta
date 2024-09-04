@@ -4,8 +4,8 @@ O Auxiliar de Dieta é um gerenciador de receitas que auxilia o usuário no aces
 
 O sistema irá utilizar :
 
-Framework Front-end (Hibernate ou SpringBoot)
+Framework Front-end (BootStrap)
 
-Back-end (Java)
+Back-end (Java- Hibernate ou SpringBoot)
 
 Banco de Dados (Mysql ou PostgreSql)
