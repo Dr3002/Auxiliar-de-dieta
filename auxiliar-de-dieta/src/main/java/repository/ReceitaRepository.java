@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ReceitaRepository extends JpaRepository<Receita, Long> {
-    // Aqui você pode adicionar métodos personalizados se necessário
 }
