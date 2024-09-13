@@ -4,27 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        .form-control {
+            margin-bottom: 20px;
+        }
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #007bff;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+        }
+        .alert-danger {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-<div class="container mt-5">
+
+<div class="login-container">
     <h2>Login</h2>
     <form th:action="@{/login}" th:object="${login}" method="post">
         <div class="form-group">
             <label for="login">Login:</label>
-            <input type="text" class="form-control" id="login" th:field="*{login}" required>
+            <input type="text" class="form-control" id="login" th:field="*{login}" placeholder="Digite seu login" required>
         </div>
         <div class="form-group">
             <label for="senha">Senha:</label>
-            <input type="password" class="form-control" id="senha" th:field="*{senha}" required>
+            <input type="password" class="form-control" id="senha" th:field="*{senha}" placeholder="Digite sua senha" required>
         </div>
         <div class="form-group text-center">
             <button type="submit" class="btn btn-primary">Entrar</button>
         </div>
-        <div th:if="${error}" class="alert alert-danger">
-            <strong>Erro!</strong> <span th:text="${error}"></span>
+        <div th:if="${error}" class="alert alert-danger text-center">
+            <span th:text="${error}"></span>
         </div>
     </form>
 </div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
