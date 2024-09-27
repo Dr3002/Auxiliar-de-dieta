@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Receita - Auxiliar de Dieta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f7f7f7;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px; /* Largura maior para acomodar melhor as imagens */
+            margin: 50px auto;
+        }
+        h1 {
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn-primary {
+            background-color: #56ab2f;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .btn-secondary {
+            padding: 12px;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .ingredient-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .ingredient {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 120px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        .ingredient:hover {
+            border-color: #56ab2f;
+        }
+        .ingredient img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+        }
+        .ingredient label {
+            padding: 5px;
+            font-size: 14px;
+            display: block;
+            background-color: #f8f8f8;
+        }
+        .ingredient input[type="checkbox"] {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transform: scale(1.5);
+        }
+        .ingredient input[type="checkbox"]:checked + label {
+            background-color: #56ab2f;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Adicionar Receita</h1>
+
+    <form>
+        <div class="mb-3">
+            <label for="nomeReceita" class="form-label">Nome da Receita:</label>
+            <input type="text" class="form-control" id="nomeReceita" placeholder="Digite o nome da receita" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Selecione os Ingredientes:</label>
+            <div class="ingredient-group">
+
+                <!-- Exemplo de ingredientes -->
+                <div class="ingredient">
+                    <input type="checkbox" id="banana" name="ingredientes" value="Banana">
+                    <img src="https://via.placeholder.com/150x100?text=Banana" alt="Banana">
+                    <label for="banana">Banana</label>
+                </div>
+
+                <div class="ingredient">
+                    <input type="checkbox" id="aveia" name="ingredientes" value="Aveia">
+                    <img src="https://via.placeholder.com/150x100?text=Aveia" alt="Aveia">
+                    <label for="aveia">Aveia</label>
+                </div>
+
+                <div class="ingredient">
+                    <input type="checkbox" id="maca" name="ingredientes" value="Maçã">
+                    <img src="https://via.placeholder.com/150x100?text=Maçã" alt="Maçã">
+                    <label for="maca">Maçã</label>
+                </div>
+
+                <div class="ingredient">
+                    <input type="checkbox" id="frango" name="ingredientes" value="Peito de Frango">
+                    <img src="https://via.placeholder.com/150x100?text=Frango" alt="Peito de Frango">
+                    <label for="frango">Peito de Frango</label>
+                </div>
+
+                <div class="ingredient">
+                    <input type="checkbox" id="cenoura" name="ingredientes" value="Cenoura">
+                    <img src="https://via.placeholder.com/150x100?text=Cenoura" alt="Cenoura">
+                    <label for="cenoura">Cenoura</label>
+                </div>
+
+                <div class="ingredient">
+                    <input type="checkbox" id="brocolis" name="ingredientes" value="Brócolis">
+                    <img src="https://via.placeholder.com/150x100?text=Brócolis" alt="Brócolis">
+                    <label for="brocolis">Brócolis</label>
+                </div>
+
+                <!-- Outros ingredientes podem ser adicionados aqui -->
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="calorias" class="form-label">Calorias:</label>
+            <input type="number" class="form-control" id="calorias" placeholder="Digite as calorias totais" required>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Salvar Receita</button>
+            <a href="/receitas" class="btn btn-secondary">Voltar</a>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
